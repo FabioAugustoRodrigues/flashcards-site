@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-12 col-sm-12 col-md-2 mb-2">
                     <button class="btn btn-dark w-100" type="submit">
-                        Search
+                        <i class="bi bi-search"></i>
                     </button>
                 </div>
             </div>
@@ -46,10 +46,14 @@
                     <td class="col-2">
                         <div class="row justify-content-center">
                             <div class="col-12 col-sm-12 col-md-6 mb-2">
-                                <button class="btn btn-dark w-100" @click="openEditModal(card)">Edit</button>
+                                <button class="btn btn-dark w-100" @click="openEditModal(card)">
+                                    Edit
+                                </button>
                             </div>
                             <div class="col-12 col-sm-12 col-md-6 mb-2">
-                                <button class="btn btn-danger w-100" @click="confirmDelete(card.id)">Delete</button>
+                                <button class="btn btn-danger w-100" @click="confirmDelete(card.id)">
+                                    <i class="bi bi-trash"></i>
+                                </button>
                             </div>
                         </div>
                     </td>
