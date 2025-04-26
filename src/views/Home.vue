@@ -6,7 +6,7 @@
                 <input
                     v-model="searchTerm"
                     type="text"
-                    class="form-control form-control-sm w-100"
+                    class="form-control w-100"
                     placeholder="Search cards..."
                 />
             </div>
