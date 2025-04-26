@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-2 mb-2">
-                    <button class="btn-theme w-100" type="submit">
+                    <button class="btn btn-dark w-100" type="submit">
                         Search
                     </button>
                 </div>
@@ -27,7 +27,7 @@
 
         <div class="row mb-4">
             <div class="col-12 col-sm-12 col-md-3">
-                <button class="btn-theme" @click="openAddModal">
+                <button class="btn btn-dark" @click="openAddModal">
                     Add Card
                 </button>
             </div>
@@ -42,14 +42,14 @@
             </thead>
             <tbody>
                 <tr v-for="card in cardsFound" :key="card.id">
-                    <td class="col-9">{{ card.question }}</td>
-                    <td class="col-3">
+                    <td class="col-10">{{ card.question }}</td>
+                    <td class="col-2">
                         <div class="row justify-content-center">
                             <div class="col-12 col-sm-12 col-md-6 mb-2">
-                                <button class="btn-theme" @click="openEditModal(card)">Edit</button>
+                                <button class="btn btn-dark w-100" @click="openEditModal(card)">Edit</button>
                             </div>
                             <div class="col-12 col-sm-12 col-md-6 mb-2">
-                                <button class="btn-theme" @click="confirmDelete(card.id)">Delete</button>
+                                <button class="btn btn-danger w-100" @click="confirmDelete(card.id)">Delete</button>
                             </div>
                         </div>
                     </td>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="modal-body">
                     <form @submit.prevent="handleSubmit">
-                        <div class="mb-3 mt-3">
+                        <div class="mb-3 mt-4">
                             <div class="input-group">
                                 <textarea v-model="currentCard.question" placeholder=" " id="question" class="w-100" rows="2" required></textarea>
                                 <span class="highlight"></span>
@@ -80,7 +80,7 @@
                                 <label for="question" class="form-label">Question</label>
                             </div>
                         </div>
-                        <div class="mb-3 mt-4">
+                        <div class="mb-3 mt-5">
                             <div class="input-group">
                                 <textarea v-model="currentCard.answer" placeholder=" " id="answer" class="w-100" rows="2" required></textarea>
                                 <span class="highlight"></span>
@@ -88,7 +88,7 @@
                                 <label for="answer" class="form-label">Answer</label>
                             </div>
                         </div>
-                        <div class="mb-3 mt-4">
+                        <div class="mb-3 mt-5">
                             <div class="input-group">
                                 <textarea v-model="currentCard.examples" placeholder=" " id="examples" class="w-100" rows="2" required></textarea>
                                 <span class="highlight"></span>
@@ -97,7 +97,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn-theme">{{ isEditing ? 'Update' : 'Save' }}</button>
+                            <button type="submit" class="btn btn-success">{{ isEditing ? 'Update' : 'Save' }}</button>
                         </div>
                     </form>
                 </div>
