@@ -24,6 +24,8 @@ import cardAPI from '../api/cards.js';
 import CardTable from '../components/CardTable.vue';
 import CardFormModal from '../components/CardFormModal.vue';
 import CardOverview from '../components/CardOverview.vue';
+
+import { useToast } from 'vue-toastification'
  
 const searchTerm = ref('');
 const cards = ref([]);
@@ -73,8 +75,10 @@ const handleSubmit = async () => {
     try {
         if (isEditing.value) {
             await cardAPI.update(currentCard.value.id, currentCard.value);
+            useToast().success('Card created successfully!');
         } else {
             await cardAPI.create(currentCard.value);
+            useToast().success('Card added successfully!');
         }
     
         cardModal.value.hide();
@@ -89,8 +93,10 @@ const confirmDelete = async (id) => {
         try {
             await cardAPI.delete(id);
             await searchCards();
+
+            useToast().success('Card deleted successfully!');
         } catch (error) {
-            console.error('Error deleting card:', error);
+            useToast().error('Error deleting card:');
         }
     }
 };
