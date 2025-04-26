@@ -1,24 +1,16 @@
 <template>
     <div class="container py-4">
         
-        <form @submit.prevent="searchCards" class="mb-4">
-            <div class="row mb-2">
-                <div class="col-12 col-sm-12 col-md-10 mb-2">
-                    <input
-                        v-model="searchTerm"
-                        type="text"
-                        class="form-control w-100"
-                        required
-                        placeholder="Search cards..."
-                    />
-                </div>
-                <div class="col-12 col-sm-12 col-md-2 mb-2">
-                    <button class="btn btn-dark w-100" type="submit">
-                        <i class="bi bi-search"></i>
-                    </button>
-                </div>
+        <div class="row mb-4">
+            <div class="col-12 col-sm-12 col-md-12 mb-2">
+                <input
+                    v-model="searchTerm"
+                    type="text"
+                    class="form-control w-100"
+                    placeholder="Search cards..."
+                />
             </div>
-        </form>
+        </div>
 
         <div class="row mb-4">
             <div class="col-12 col-sm-12 col-md-3">
