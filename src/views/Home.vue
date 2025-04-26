@@ -4,18 +4,13 @@
         <form @submit.prevent="searchCards" class="mb-4">
             <div class="row mb-2">
                 <div class="col-12 col-sm-12 col-md-10 mb-2">
-                    <div class="input-group">
-                        <input
-                            v-model="searchTerm"
-                            type="text"
-                            class="w-100"
-                            required
-                            placeholder=" "
-                        />
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label for="name">Card term</label>
-                    </div>
+                    <input
+                        v-model="searchTerm"
+                        type="text"
+                        class="form-control w-100"
+                        required
+                        placeholder="Search cards..."
+                    />
                 </div>
                 <div class="col-12 col-sm-12 col-md-2 mb-2">
                     <button class="btn btn-dark w-100" type="submit">
@@ -76,28 +71,22 @@
                 </div>
                 <div class="modal-body">
                     <form @submit.prevent="handleSubmit">
-                        <div class="mb-3 mt-4">
-                            <div class="input-group">
-                                <textarea v-model="currentCard.question" placeholder=" " id="question" class="w-100" rows="2" required></textarea>
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label for="question" class="form-label">Question</label>
+                        <div class="mb-3">
+                            <div class="form-floating">
+                                <textarea v-model="currentCard.question" placeholder=" " class="form-control w-100" id="question"></textarea>
+                                <label for="floatingTextarea">Question</label>
                             </div>
                         </div>
-                        <div class="mb-3 mt-5">
-                            <div class="input-group">
-                                <textarea v-model="currentCard.answer" placeholder=" " id="answer" class="w-100" rows="2" required></textarea>
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label for="answer" class="form-label">Answer</label>
+                        <div class="mb-3">
+                            <div class="form-floating">
+                                <textarea v-model="currentCard.answer" placeholder=" " class="form-control w-100" id="answer"></textarea>
+                                <label for="floatingTextarea">Answer</label>
                             </div>
                         </div>
-                        <div class="mb-3 mt-5">
-                            <div class="input-group">
-                                <textarea v-model="currentCard.examples" placeholder=" " id="examples" class="w-100" rows="2" required></textarea>
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label for="examples" class="form-label">Examples</label>
+                        <div class="mb-3">
+                            <div class="form-floating">
+                                <textarea v-model="currentCard.examples" placeholder=" " class="form-control w-100" id="examples"></textarea>
+                                <label for="floatingTextarea">Examples</label>
                             </div>
                         </div>
                         <div class="modal-footer">
