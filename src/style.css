@@ -70,7 +70,7 @@
     position: relative;
 }
   
-input {
+input, textarea {
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: block;
@@ -79,7 +79,7 @@ input {
     border-bottom: 1px solid #757575;
 }
   
-input:focus {
+input:focus, textarea:focus {
     outline: none;
 }
   
@@ -97,7 +97,9 @@ label {
 }
   
 input:focus ~ label,
-input:not(:placeholder-shown) ~ label {
+input:not(:placeholder-shown) ~ label,
+textarea:focus ~ label,
+textarea:not(:placeholder-shown) ~ label {
     top: -20px;
     font-size: 14px;
     color: #eb7a00;
