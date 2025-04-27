@@ -20,6 +20,9 @@ const logo = ref(logoPath);
             <li class="nav-item">
               <router-link to="/" class="nav-link">Home</router-link>
             </li>
+            <li class="nav-item">
+              <router-link to="/practice" class="nav-link">Practice</router-link>
+            </li>
           </ul>
         </div>
       </div>
