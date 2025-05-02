@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://api-flashcards.fabioarodrigues.com.br";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default {
   getAll(leitner=false) {
