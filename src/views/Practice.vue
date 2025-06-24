@@ -13,8 +13,20 @@
                     <h3 class="mb-4">{{ cards[currentIndex].question }}</h3>
 
                     <div class="text-muted fw-bold mb-4 mt-2" style="min-height: 60px;">
-                        <small v-if="showAnswer">{{ cards[currentIndex].answer }}</small>
-                        <small v-else class="blurred-text">{{ cards[currentIndex].answer }}</small>
+                        <div v-if="showAnswer">
+                            <small>{{ cards[currentIndex].answer }}</small>
+
+                            <div class="mt-3">
+                                <small class="break-line">{{ cards[currentIndex].examples }}</small>
+                            </div>
+                        </div>
+                        <div v-else>
+                            <small class="blurred-text">{{ cards[currentIndex].answer }}</small>
+
+                            <div class="mt-3">
+                                <small class="break-line blurred-text">{{ cards[currentIndex].examples }}</small>
+                            </div>
+                        </div>
                     </div>
 
                     <button v-if="!showAnswer" @click="revealAnswer" class="btn btn-sm btn-dark w-100 mb-2">
@@ -138,5 +150,10 @@ onMounted(() => {
 
 .difficulty-hard:hover {
     opacity: 0.9;
+}
+
+.break-line {
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 </style>
